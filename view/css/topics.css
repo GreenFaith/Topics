@@ -1,0 +1,19 @@
+.list-group-item-meta{
+	font-size:11px;
+	line-height:17px;
+	list-style-type:none;
+	overflow:hidden;
+	padding-left: 0px;
+	color:#999999;
+}
+.list-group-item-meta>li {
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.avatar {
+	height: 48px;
+	width: 48px;
+	float: left;
+	margin-right:8px;
+}

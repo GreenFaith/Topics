@@ -1,0 +1,16 @@
+<div>
+	<!-- Input:content -->
+	<div class="modal-body"><form role="form">
+	  <div class="form-group">
+	    <label for="reply-content">new reply</label>
+	    <textarea  class="form-control" id="reply-content" placeholder="content" ng-model="content"></textarea>
+	  </div>
+	</form></div>
+
+	<!-- Input:submit -->
+	<div class="modal-footer">
+		<pre>{{content}}</pre>
+    	<button type="submit" class="btn btn-default" ng-click="ok(content)">Submit</button>
+    	<button type="submit" class="btn btn-default" ng-click="cancel()">Cancel</button>
+	</div>
+</div>

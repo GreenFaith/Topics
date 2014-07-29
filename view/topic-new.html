@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <h3 class="modal-title">New topic</h3>
+</div>
+
+<!-- form -->
+<div class="modal-body"><form role="form">
+  <div class="form-group">
+    <label for="topic-title">Title</label>
+    <input type="text" class="form-control" id="topic-title" placeholder="Title" ng-model="_title">
+  </div>
+  <div class="form-group">
+    <label for="topic-content">Content</label>
+    <textarea  class="form-control" id="topic-content" placeholder="Content" ng-model="_content"></textarea>
+  </div>
+</form></div>
+
+<!-- submit -->
+<div class="modal-footer">
+    <pre>{{_content}}</pre>   
+    <button type="submit" class="btn btn-default" ng-click="ok(_title, _content)">Submit</button>
+    <button type="submit" class="btn btn-default" ng-click="cancel()">Cancel</button>
+</div>
+    
+   

@@ -1,0 +1,27 @@
+<div class="container col-md-6 col-md-offset-3" ng-controller="topicDetailCtrl">
+	<!-- topic -->
+	<div class="row">
+		<h1>{{"#"+topic.id+" "+topic.title}}
+			<span><button class="btn col-md-offset-4" ng-click="reply()">add reply</button></span></h1>
+		<div class="panel panel-default">
+ 			<div class="panel-heading">
+ 				<span>Topic @{{topic.created_at*1000 | date:'medium'}}</span>
+ 			</div>
+  			<div class="panel-body">
+    			<pre>{{topic.content}}</pre>
+  			</div>
+		</div>
+	</div>
+	<!--reply-->
+	<div class="row" ng-repeat="reply in replys">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				{{reply.created_at*1000 | date:'medium'}}
+				<span class="pull-right">#{{reply.floor}}</span>
+			</div>
+			<div class="panel-body">
+    			<p>{{reply.content}}</p>
+  			</div>
+		</div>
+	</div>
+</div>
