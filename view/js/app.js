@@ -9,7 +9,7 @@ controller('topicCtrl',function ($http, $scope, $modal) {
   $scope.offset = 0;
   //fetch topics by $http
   $scope.getToptics = function (offset){
-    $http.get('http://"+server_domain+"/topics?offset='+offset).
+    $http.get('http://'+server_domain+'/topics?offset='+offset).
     success(function(data, status, headers, config) {
       $scope.topics = data.data.items;                  
     }).
@@ -50,7 +50,7 @@ controller('topicCtrl',function ($http, $scope, $modal) {
      
     $scope.ok = function(title, content) {
       $http({
-        url: 'http://"+server_domain+"/topics',
+        url: 'http://'+server_domain+'/topics',
         method: 'POST',
         data: "title="+title+"&content="+content,
       }).
@@ -75,7 +75,7 @@ controller("topicDetailCtrl", function ($http, $scope, $routeParams, $modal){
   $scope.tid = $routeParams.id;
   //fetch topic by id;
   $scope.init = function () {
-    $http.get('http://"+server_domain+"/topics/'+$scope.tid).
+    $http.get('http://'+server_domain+'/topics/'+$scope.tid).
       success(function (data,status) {
         if(data.data){
           $scope.topic = data.data.items[0];
@@ -83,7 +83,7 @@ controller("topicDetailCtrl", function ($http, $scope, $routeParams, $modal){
           alert(data.error.message);
         }});
     //fetch reply list
-    $http.get('http://"+server_domain+"/replys?topic_id='+$scope.tid).
+    $http.get('http://'+server_domain+'/replys?topic_id='+$scope.tid).
     success(function (data, status){
       if(data.data){
         $scope.replys = data.data.items;
@@ -109,7 +109,7 @@ controller("topicDetailCtrl", function ($http, $scope, $routeParams, $modal){
   $scope.replyModalCtrl = function ($scope, $http, $modalInstance, topic_id) {
       $scope.content = "";
       $scope.ok = function (content) {
-        $http.post('http://"+server_domain+"/replys',"content="+content+"&topic_id="+topic_id).
+        $http.post('http://'+server_domain+'/replys',"content="+content+"&topic_id="+topic_id).
         success(function (data, status) {
           if (data.data) {
             $modalInstance.close("success");

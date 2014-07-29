@@ -2,10 +2,11 @@
 	<!-- topic -->
 	<div class="row">
 		<h1>{{"#"+topic.id+" "+topic.title}}
-			<span><button class="btn col-md-offset-4" ng-click="reply()">add reply</button></span></h1>
+			</h1>
 		<div class="panel panel-default">
  			<div class="panel-heading">
  				<span>Topic @{{topic.created_at*1000 | date:'medium'}}</span>
+ 				<span><button class="btn col-md-offset-4" ng-click="reply()">add reply</button></span>
  			</div>
   			<div class="panel-body">
     			<pre>{{topic.content}}</pre>
