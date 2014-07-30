@@ -6,7 +6,6 @@ basic Topic/Reply web applicant（build on openresty)
 
 
 ## Benchmark
-======
     cpu MHz		: 2000.000   
     cpu MHz		: 1200.000   
        
